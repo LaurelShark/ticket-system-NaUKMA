@@ -30,8 +30,8 @@ $this->params['breadcrumbs'][] = $this->title;
             'user_id',
             'date',
             'start_time',
-            //'end_time',
-            //'confirmation',
+            'end_time',
+            'considered_by',
 
             ['class' => 'yii\grid\ActionColumn'],
         ],

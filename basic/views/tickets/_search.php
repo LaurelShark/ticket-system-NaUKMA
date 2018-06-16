@@ -27,7 +27,7 @@ use yii\widgets\ActiveForm;
 
     <?php // echo $form->field($model, 'end_time') ?>
 
-    <?php // echo $form->field($model, 'confirmation') ?>
+    <?php // echo $form->field($model, 'considered_by') ?>
 
     <div class="form-group">
         <?= Html::submitButton('Search', ['class' => 'btn btn-primary']) ?>

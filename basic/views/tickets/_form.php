@@ -22,7 +22,7 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'end_time')->textInput() ?>
 
-    <?= $form->field($model, 'confirmation')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'considered_by')->textInput() ?>
 
     <div class="form-group">
         <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>

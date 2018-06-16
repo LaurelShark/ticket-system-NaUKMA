@@ -18,8 +18,8 @@ class TicketsSearch extends Tickets
     public function rules()
     {
         return [
-            [['t_id', 'room_id', 'user_id'], 'integer'],
-            [['date', 'start_time', 'end_time', 'confirmation'], 'safe'],
+            [['t_id', 'room_id', 'user_id', 'considered_by'], 'integer'],
+            [['date', 'start_time', 'end_time'], 'safe'],
         ];
     }
 
@@ -65,9 +65,8 @@ class TicketsSearch extends Tickets
             'date' => $this->date,
             'start_time' => $this->start_time,
             'end_time' => $this->end_time,
+            'considered_by' => $this->considered_by,
         ]);
-
-        $query->andFilterWhere(['like', 'confirmation', $this->confirmation]);
 
         return $dataProvider;
     }

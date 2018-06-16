@@ -13,10 +13,11 @@ use Yii;
  * @property string $date
  * @property string $start_time
  * @property string $end_time
- * @property string $confirmation
+ * @property int $considered_by
  *
  * @property Users $user
  * @property Rooms $room
+ * @property Admins $consideredBy
  */
 class Tickets extends \yii\db\ActiveRecord
 {
@@ -34,12 +35,12 @@ class Tickets extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['room_id', 'user_id', 'date', 'start_time', 'end_time', 'confirmation'], 'required'],
-            [['room_id', 'user_id'], 'integer'],
+            [['room_id', 'user_id', 'date', 'start_time', 'end_time', 'considered_by'], 'required'],
+            [['room_id', 'user_id', 'considered_by'], 'integer'],
             [['date', 'start_time', 'end_time'], 'safe'],
-            [['confirmation'], 'string', 'max' => 100],
             [['user_id'], 'exist', 'skipOnError' => true, 'targetClass' => Users::className(), 'targetAttribute' => ['user_id' => 'u_id']],
             [['room_id'], 'exist', 'skipOnError' => true, 'targetClass' => Rooms::className(), 'targetAttribute' => ['room_id' => 'room_id']],
+            [['considered_by'], 'exist', 'skipOnError' => true, 'targetClass' => Admins::className(), 'targetAttribute' => ['considered_by' => 'a_id']],
         ];
     }
 
@@ -55,7 +56,7 @@ class Tickets extends \yii\db\ActiveRecord
             'date' => 'Date',
             'start_time' => 'Start Time',
             'end_time' => 'End Time',
-            'confirmation' => 'Confirmation',
+            'considered_by' => 'Considered By',
         ];
     }
 
@@ -73,5 +74,13 @@ class Tickets extends \yii\db\ActiveRecord
     public function getRoom()
     {
         return $this->hasOne(Rooms::className(), ['room_id' => 'room_id']);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getConsideredBy()
+    {
+        return $this->hasOne(Admins::className(), ['a_id' => 'considered_by']);
     }
 }
