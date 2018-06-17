@@ -1,5 +1,7 @@
 <?php
 
+use yii\helpers\Url;
+
 ?>
 
 <!DOCTYPE html>
@@ -18,10 +20,10 @@
 </head>
 <body>
 
-<header class="main-header grid" style="background-image: url(img/Phy1.jpg);">
+<header class="main-header grid" style="background-image: url(img/Phy.jpg);">
         
         <div class="header-content grid">
-            <h1>Booking NaUKMA audiences</h1>
+            <h1>Welcome to super stemukr01</h1>
             <div class="header-buttons">
                 <a href="#login!" class="button">Log in!</a>
                 <a href="#" class="button button-gray">Read more</a>
@@ -33,9 +35,9 @@
 <section class="formsection">
         <div class="container">
             <a name="login!"></a>
-            <form class="grid" action="<?= \Yii::$app->request->url ?>" class="well" method="POST">
-                <div><input type="text" name="email" placeholder="Your login" required></div>
-                <div><input type="password" name="password" placeholder="Your password"></div>
+            <form class="grid" action="<?= Url::to(['/site/login']) ?>" class="well" method="POST">
+                <div><input type="text" name="LoginForm[username]" placeholder="Your login" required></div>
+                <div><input type="password" name="LoginForm[password]" placeholder="Your password"></div>
                 <div><input type="text" name="name" placeholder="Special code(for admins)"></div>
                 <div><button class="button">Log In</button></div>
                 <input type="hidden" name="_csrf" value="<?=Yii::$app->request->getCsrfToken()?>" />
