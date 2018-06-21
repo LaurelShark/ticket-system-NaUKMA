@@ -7,6 +7,7 @@
 	<script src="js/jquery.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/page_transfer.js"></script>
+    <script src="js/room.js"></script>
     <script src="js/igorko's_tabs.js"></script>
 	<head>
 		<title>
@@ -14,7 +15,7 @@
 		</title>
 	</head>
 
-	<body>
+	<body onload="loadRooms();">
 		<div class="head_bar head_text_style btn-group" role="group">
 			<!-- Bar. It contatins some buttons -->
 			<button type="button" class="btn btn-default bar_button col-md" onclick="goToPage('profile.html')">Профіль</button>
@@ -23,11 +24,8 @@
             <button type="button" class="btn btn-default bar_button col-md" onclick="">Вийти</button>
 		</div>
         <!-- Here we have another bar, which contains settings for search-->
-        <div>
-            
-        </div>
-		<div class="page_container">
-			<div class="tab_container">
+		<div class="page_container" onload="updateList();">
+			<div id="corp_tab" class="tab_container">
 				<button class="btn tab_button" onclick="openTab(event, 'algebra')">Корпус 1</button>
 				<button class="btn tab_button" onclick="openTab(event, 'geometry')">Корпус 2</button>
 				<button class="btn tab_button" onclick="openTab(event, 'physics')">Корпус 3</button>
@@ -41,89 +39,33 @@
 				<button class="btn tab_button" onclick="openTab(event, 'nope')">Корпус 10</button>
 				<button class="btn tab_button" onclick="openTab(event, 'nope')">Корпус 11</button>
 			</div>
-
-			<div id="algebra" class="tab_content">
-				<h3>Алгебра</h3>
-				<p>Матеріали та домашні завдання з Алгебри.</p>
-				<br>
-				<h4><a class="tab_link" onclick="openTabLink(event, 'a1')">Тема 1</a></h4>
-				<div id="a1" class="tab_link_content">
-					<a>Матеріали по темі 1</a>
-					<br>
-					<a>Домашня робота</a>
-				</div>
-				<br>
-				<h4><a class="tab_link" onclick="openTabLink(event, 'a2')">Тема 2</a></h4>
-				<div id="a2" class="tab_link_content">
-					<a>Матеріали по темі 2</a>
-					<br>
-					<a>Домашня робота</a>
-				</div>
-				<br>
-				<h4><a class="tab_link" onclick="openTabLink(event, 'a3')">Тема 3</a></h4>
-				<div id="a3" class="tab_link_content">
-					<a>Матеріали по темі 3</a>
-					<br>
-					<a>Домашня робота</a>
-				</div>
-			</div>
-
-			<div id="geometry" class="tab_content">
-				<h3>Геометрія</h3>
-				<p>Матеріали та домашні завдання з Геометрії.</p> 
-				<br>
-				<h4><a class="tab_link" onclick="openTabLink(event, 'g1')">Тема 1</a></h4>
-				<div id="g1" class="tab_link_content">
-					<a>Матеріали по темі 1</a>
-					<br>
-					<a>Домашня робота</a>
-				</div>
-				<br>
-				<h4><a class="tab_link" onclick="openTabLink(event, 'g2')">Тема 2</a></h4>
-				<div id="g2" class="tab_link_content">
-					<a>Матеріали по темі 2</a>
-					<br>
-					<a>Домашня робота</a>
-				</div>
-				<br>
-				<h4><a class="tab_link" onclick="openTabLink(event, 'g3')">Тема 3</a></h4>
-				<div id="g3" class="tab_link_content">
-					<a>Матеріали по темі 3</a>
-					<br>
-					<a>Домашня робота</a>
-				</div>
-			</div>
-
-			<div id="physics" class="tab_content">
-				<h3>Фізика</h3>
-				<p>Матеріали та домашні завдання з Фізики.</p>
-				<br>
-				<h4><a class="tab_link" onclick="openTabLink(event, 'ch1')">Тема 1</a></h4>
-				<div id="ch1" class="tab_link_content">
-					<a>Матеріали по темі 1</a>
-					<br>
-					<a>Домашня робота</a>
-				</div>
-				<br>
-				<h4><a class="tab_link" onclick="openTabLink(event, 'ch2')">Тема 2</a></h4>
-				<div id="ch2" class="tab_link_content">
-					<a>Матеріали по темі 2</a>
-					<br>
-					<a>Домашня робота</a>
-				</div>
-				<br>
-				<h4><a class="tab_link" onclick="openTabLink(event, 'ch3')">Тема 3</a></h4>
-				<div id="ch3" class="tab_link_content">
-					<a>Матеріали по темі 3</a>
-					<br>
-					<a>Домашня робота</a>
-				</div>
-			</div>
-			
-			<div id="nope" class="tab_content">
-				<h3>Немає.</h3>
-				<p>На даний момент, цей предмет недоступний.</p>
-			</div>
+            
+            <div id="sub_tab" style="width: 100%; padding: 0px;">
+                <div id="settings_tab" class="settings_container">
+                    <container_table>
+                        <p>
+                        <label>Пошук:</label>
+                        <input type="text" id="search_text" style="float:middle;"></input>
+                        </p>
+                        <p>
+                        <label>Кількість місць:</label>
+                        <input type="number" id="num_of_seats" style="float:middle;"></input>
+                        <select id="pred">
+                            <option value="more">більше</option>
+                            <option value="less">менше</option>
+                        </select>
+                        </p>
+                        <p>
+                            <label></label>
+                            <button type="button" class="btn btn-default col-md" onclick="updateList();">пошук</button>
+                        </p>
+                    </container_table>
+                </div>
+                <div id="content_tab">
+					<!-- here goes list of valid rooms-->
+					js не працює лоооооол
+                </div>
+            </div>
 		</div>
 	</body>
 </html>

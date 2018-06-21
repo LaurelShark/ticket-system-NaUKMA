@@ -35,6 +35,28 @@ error_message {
 	outline-color: rgb(42,60,70);
 }
 
+.settings_container {
+    background-color: rgb(128,128,255);
+    width: 100%;
+    
+}
+container_table {
+    display: table;
+}
+container_table p {
+    display: table-row;
+}
+container_table label {
+    width: 30%;
+    display: table-cell;
+}
+container_table input {
+    display: table-cell;
+}
+container_table select {
+    display: table-cell;
+}
+
 
 .page_container{
     position: absolute;
@@ -65,15 +87,19 @@ error_message {
     justify-content: center;
 }
 
-
+.room_button {
+	margin: 5px;
+	-width: 95%;
+	-display: none;
+}
 
 body{
 	background-color: rgb(205,205,205);
 }
 
 .tab_content{
-	margin-left: 2%;
-	margin-right: 10%;
+	-margin-left: 2%;
+	-margin-right: 10%;
 	pad-bottom: 20px;
 	background-color: rgb(189,193,202);
 	display: none;
@@ -81,9 +107,6 @@ body{
 .tab_button{
 	width: 100%;
 	padding: 10% 0 10% 0;
-}
-.tab_link{
-	
 }
 .tab_link_content{
 	display: none;
