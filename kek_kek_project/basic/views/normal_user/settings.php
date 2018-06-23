@@ -30,7 +30,7 @@
 		</div>
         
 		<div class="page_container centered">
-			<div class="news_container centered" style="width: 80%;">
+			<div class="block_container centered" style="width: 80%;">
                 <form>
                     <br>
                     Логін:<input type="text" id="login" style="float:right;"></input>

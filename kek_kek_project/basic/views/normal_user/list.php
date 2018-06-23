@@ -28,22 +28,16 @@
             <button type="button" class="btn btn-default bar_button col-md" onclick="">Вийти</button>
 		</div>
 		<div class="page_container">
-			<!-- Page contents -->
-			<div class="block_container">
-					<h1>Відкрито доступ до усіх сторінок!</h1>
-					<p>Проте не всі працюють :P</p>
+			<div style="padding-left: 2%; padding-right: 2%; left: 2%; right: 2%;">
+				<!-- Page contents -->
+				<div class="block_container" style="background-color: green; color: white; text-algin: center;">
+					<button type="button" class="btn btn-success wide_button col-md" onclick="popup('date_picker')">Нове...</button>
 				</div>
-				<hr/>
 				<div class="block_container">
-					<h1>Нова сторінка - предмети</h1>
-					<p>Тепер ви можете преглядати домашні завдання та матеріали по предметах у відповідному розділі.</p>
+					<h1>Дата та час</h1>
+					<p>Місце</p>
 				</div>
-				<hr/>
-				<div class="block_container">
-					<h1>Сторінку новин створено!</h1>
-					<p>Перший запис.</p>
-				</div>
-				<hr/>
+			</div>
 		</div>
 	</body>
 </html>
