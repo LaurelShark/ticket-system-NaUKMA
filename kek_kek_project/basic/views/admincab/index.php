@@ -30,9 +30,9 @@
                 <span class="caret"></span>
               </button>
               <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                <li><a href="<?= \yii\helpers\Url::to(['metodist/index']) ?>" type="button" data-toggle="modal">Metodist</a></li>
+               <li><a href="<?= \yii\helpers\Url::to(['metodist/index']) ?>" type="button" data-toggle="modal">Metodist</a></li>
                 <li><a href="<?= \yii\helpers\Url::to(['student/index']) ?>" type="button" data-toggle="modal">Student</a></li>
-                <li><a href="<?= \yii\helpers\Url::to(['teacher/index']) ?>" type="button" data-toggle="modal">Teacher</a></li>
+                <li><a href="<?= \yii\helpers\Url::to(['teacher/index']) ?>" type="button" data-toggle="modal">Teacher</a></li> 
               </ul>
             </div>
           </div>
@@ -61,19 +61,20 @@
               <div class="panel-body">
                 <div class="col-md-3">
                   <div class="well dash-box">
-                    <h2><span class="glyphicon glyphicon-user" aria-hidden="true"></span> <?= \app\models\Metodist::find()->count() ?></h2>
+                    <!--<h2><span class="glyphicon glyphicon-user" aria-hidden="true"></span> </h2>-->
+
                     <h4>Metodists</h4>
                   </div>
                 </div>
                 <div class="col-md-3">
                   <div class="well dash-box">
-                    <h2><span class="glyphicon glyphicon-user" aria-hidden="true"></span> <?= \app\models\Teacher::find()->count() ?></h2>
+                    <!--<h2><span class="glyphicon glyphicon-user" aria-hidden="true"></span> <?= \app\models\Users::find()->count() ?></h2>-->
                     <h4>Teachers</h4>
                   </div>
                 </div>
                 <div class="col-md-3">
                   <div class="well dash-box">
-                    <h2><span class="glyphicon glyphicon-user" aria-hidden="true"></span> <?= \app\models\Student::find()->count() ?></h2>
+                  <!--  <h2><span class="glyphicon glyphicon-user" aria-hidden="true"></span> </h2>-->
                     <h4>Students</h4>
                   </div>
                 </div>
