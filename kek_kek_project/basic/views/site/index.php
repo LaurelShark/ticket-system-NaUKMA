@@ -10,7 +10,7 @@ use yii\helpers\Url;
 
     <meta charset="utf-8">
 
-    <title>Stemukr01</title>
+    <title>Tickets</title>
     <meta name="description" content="CSS Grid Real Example">
 
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -20,13 +20,13 @@ use yii\helpers\Url;
 </head>
 <body>
 
-<header class="main-header grid" style="background-image: url(img/Phy.jpg);">
+<header class="main-header grid" style="background-image: url(img/Phy1.jpg);">
         
         <div class="header-content grid">
-            <h1>Welcome to super stemukr01</h1>
+            <h1>NaUKMA Ticket System</h1>
             <div class="header-buttons">
                 <a href="#login!" class="button">Log in!</a>
-                <a href="#" class="button button-gray">Read more</a>
+                <a href="#" class="button button-gray ">Read more</a>
             </div>
         </div>
          <script src="js/scripts.min.js"></script>
@@ -38,60 +38,38 @@ use yii\helpers\Url;
             <form class="grid" action="<?= Url::to(['/site/login']) ?>" class="well" method="POST">
                 <div><input type="text" name="LoginForm[username]" placeholder="Your login" required></div>
                 <div><input type="password" name="LoginForm[password]" placeholder="Your password"></div>
-                <div><input type="text" name="name" placeholder="Special code(for admins)"></div>
+                <div><input type="text" name="name" placeholder="Empty field"></div>
                 <div><button class="button">Log In</button></div>
                 <input type="hidden" name="_csrf" value="<?=Yii::$app->request->getCsrfToken()?>" />
             </form>
-
-        </div>
-    </section> 
-
-<?php if(isset($failure) && $failure): ?>
+            <?php if(isset($failure) && $failure): ?>
     <script>
         $(function() {
             alert("Wrong username of password!")
         })
     </script>
 <?php endif; ?>
+        </div>
+    </section> 
+
+
 
 
 
 <section class="portfolio-section grid">
-        <div class="portfolio-item grid" style="background-image: url(img/im1.jpg)"><span>Chemistry</span></div>
-        <div class="portfolio-item grid" style="background-image: url(img/im2.jpg)"><span>Math</span></div>
-        <div class="portfolio-item grid" style="background-image: url(img/im3.jpg)"><span>Physics</span></div>
-        <div class="portfolio-item grid" style="background-image: url(img/im4.jpg)"><span>Cryptography</span></div>
-        <div class="portfolio-item grid" style="background-image: url(img/im5.jpg)"><span>Web Development</span></div>
-        <div class="portfolio-item grid" style="background-image: url(img/im6.jpg)"><span>React.js</span></div>
-        <div class="portfolio-item grid" style="background-image: url(img/im7.jpg)"><span>Business</span></div>
-        <div class="portfolio-item grid" style="background-image: url(img/im8.jpg)"><span>Machine Learning</span></div>
-        <div class="portfolio-item grid" style="background-image: url(img/im9.jpg)"><span>Artificial Intelligence</span></div>
-        <div class="buttoncase text-center">
-            <a href="#" class="button">View Portfolio</a>
-        </div>
+        <div class="portfolio-item grid" style="background-image: url(img/ii1.jpg)"><span>Courses</span></div>
+        <div class="portfolio-item grid" style="background-image: url(img/im2.jpg)"><span>New Distedu</span></div>
+        <div class="portfolio-item grid" style="background-image: url(img/ii3.jpg)"><span>Academy</span></div>
+        <div class="portfolio-item grid" style="background-image: url(img/ii4.jpg)"><span>Dormitories</span></div>
+        <div class="portfolio-item grid" style="background-image: url(img/ii5.jpg)"><span>Audiences</span></div>
+        <div class="portfolio-item grid" style="background-image: url(img/ii6.jpg)"><span>History</span></div>
+        <div class="portfolio-item grid" style="background-image: url(img/ii7.jpg)"><span>Need Help</span></div>
+        <div class="portfolio-item grid" style="background-image: url(img/ii8.jpg)"><span>Students life</span></div>
+        <div class="portfolio-item grid" style="background-image: url(img/ii9.jpg)"><span>Lecturers</span></div>
+        
     </section>
 
-    <section class="section-ready landing-section">
-        <div class="container grid">
-            
-            <div class="ready-left">
-                
-                <h2>The Coolest system!<br>Fantastic four: Yarik, Alosha, Sofi, Annet</h2>
-
-                <p>А сюди щось цікаве!)</p>
-                <p>Ullam eos illum, voluptate necessitatibus laudantium, enim rem sed magni facilis vel praesentium minus? Magnam excepturi distinctio atque sint nam facilis recusandae assumenda quibusdam a. Deleniti, obcaecati dolorum tenetur sunt.</p>
-
-            </div>
-
-            <div class="ready-right">
-                
-                <img src="img/example.jpg" alt="Example" class="img-responsive">
-
-            </div>
-
-        </div>
-    </section>
-
+  
     
 
     <section class="landing-section section-blog">

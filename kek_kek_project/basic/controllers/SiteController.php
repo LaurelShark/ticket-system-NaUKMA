@@ -81,7 +81,7 @@ class SiteController extends Controller
             //echo get_class($user);
             if(get_class($user)=="app\models\Admins"){
                 //echo 'useeeeeeer';
-                return $this->redirect(['/tickets/index']);
+                return $this->redirect(['usercab/index']);
             }
             if(get_class($user)=="app\models\Users"){
                // echo 'asdjfkas';
