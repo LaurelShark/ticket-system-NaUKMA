@@ -30,14 +30,9 @@ function updateList()
 {
     //Clear all the elements first!
     var tabcontent = document.getElementById("content_tab");
-    var sidebar = document.getElementById("corp_tab");
     while (tabcontent.firstChild) 
     {
         tabcontent.removeChild(tabcontent.firstChild);
-    }
-    while (sidebar.firstChild)
-    {
-        sidebar.removeChild(sidebar.firstChild);
     }
     
     var search_string = document.getElementById('search_text').value;
@@ -52,14 +47,15 @@ function updateList()
         //Create list of rooms and add it to tabcontent
         for (var i = 0; i < valid_rooms.length; i++)
         {
+            var el = document.createElement('div');
             var temp_button = document.createElement("button");
-            temp_button.className = "btn tab_button";
+            temp_button.className = "btn btn-default panel-heading main-color-bg";
             temp_button.setAttribute('onclick',  'openTab(event, '+i+');');
-            temp_button.innerHTML = valid_rooms[i].name;
+            temp_button.innerHTML = '<h3 class="panel-title"><i class="fa fa-arrows" aria-hidden="true"></i>'+valid_rooms[i].name+'</h3>';
 
             var temp_tab = document.createElement("div");
-            temp_tab.className = "tab_content"
-            temp_tab.setAttribute('id', 'list#' + i);
+            temp_tab.style.display = "none";
+            temp_tab.setAttribute('id', 'list_' + i);
 
             for (var j = 0; j < valid_rooms[i].rooms.length; j++)
             {
@@ -70,8 +66,9 @@ function updateList()
                 temp_tab.appendChild(temp_room);
             }
 
-            tabcontent.appendChild(temp_tab);
-            sidebar.appendChild(temp_button);
+            el.appendChild(temp_button);
+            el.appendChild(temp_tab);
+            tabcontent.appendChild(el);
         }
     }
     else
@@ -116,7 +113,22 @@ function checkRooms(string, num, pred)
     return result;
 }
 
-function openTab(evt, tab_num) 
+
+function openTab(event, tab_num)
+{
+    var tab_name = "list_"+tab_num;
+    var tab = document.getElementById(tab_name);
+    if (tab.style.display == "none")
+    {
+        tab.style.display = "block"
+    }
+    else
+    {
+        tab.style.display = "none"
+    }
+}
+
+function openTab1(evt, tab_num) 
 {
     //First, hide current elements
     var tab_content = document.getElementById("content_tab")

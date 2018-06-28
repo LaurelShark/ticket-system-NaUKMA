@@ -1,0 +1,35 @@
+.settings_container {
+    background-color: rgb(200,200,200);
+    width: 100%;
+    
+}
+container_table {
+    display: table;
+}
+container_table p {
+    display: table-row;
+}
+container_table label {
+	font-size: 16px;
+	padding: 4px;
+    width: 50%;
+    display: table-cell;
+}
+container_table input {
+	width: 125%;
+    display: table-cell;
+}
+container_table select {
+    display: table-cell;
+}
+
+.mid {
+	left: 10%;
+	right: 10%;
+}
+
+.room_button {
+	margin: 5px;
+	-width: 95%;
+	-display: none;
+}

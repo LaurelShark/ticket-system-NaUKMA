@@ -8,9 +8,14 @@
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
+    <link href="css/project.css" rel="stylesheet">
+    <script src="js/room.js"></script>
+    <script src="js/ticket.js"></script>
+    <script src="js/igorko's_tabs.js"></script>
     <script src="js/page_transfer.js"></script>
+    <script src="js/ticket_list.js"></script>
   </head>
-  <body>
+  <body onload="">
 
     <header id="header">
       <div class="container">
@@ -36,19 +41,19 @@
         <div class="row">
           <div class="col-md-3">
             <div class="list-group">
-              <a href="index.php" class="list-group-item active main-color-bg">
+              <a href="index.php" class="list-group-item">
                 <span class="glyphicon glyphicon-cog" aria-hidden="true"></span> Огляд
               </a>
               <a href="rooms.php" class="list-group-item"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>
               </span> Замовлення <span id="ticket-count" class="badge">12</span></a>
-              <a href="settings.php" class="list-group-item"><span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
+              <a href="settings.php" class="list-group-item main-color-bg"><span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
               </span> Налаштування </a>
               <a href="" class="list-group-item"><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span>
               </span> Вийти </a>
             </div>
 
             <div class="well">
-              <h4>Створити нове замовлення:</h4>
+              <h4>Створити нове замовлення</h4>
               <!--Insert ticket creation stuff here-->
 
               <h5>Оберіть дату та час:</h5>
@@ -57,29 +62,18 @@
             </div>
           </div>
           <div class="col-md-9">
-            <!-- Website Overview -->
-            <div class="panel panel-default">
-              <div class="panel-heading main-color-bg">
-                <h3 class="panel-title"><i class="fa fa-arrows" aria-hidden="true"></i>Користувач</h3>
-              </div>
-              <div class="panel-body">
-                <div class="col-md-3">
-                  <div class="well dash-box">
-                    <h1><span class="glyphicon glyphicon-user" aria-hidden="true"></span></h1>
-                    <h4>My Ava</h4>
-                  </div>
-                </div>
-                <div class="col-md-5">
-                  <h3>ПІБ користувача</h3>
-                  <h4>Додаткова інформація</h4>
-                </div>
-              </div>
-              </div>
-
-              <!-- Latest Users -->
-              <iframe src="https://calendar.google.com/calendar/embed?height=600&amp;wkst=1&amp;bgcolor=%23b7aaaa&amp;src=ekp2jn033r3nhlisflhlrqn1ck%40group.calendar.google.com&amp;color=%23B1365F&amp;ctz=Europe%2FHelsinki" 
-              style="border-width:0" width="845" height="600" frameborder="0" scrolling="no"></iframe>
-
+            
+            <!--Here goes all the settings-->
+            <div id="settings_tab" class="settings_container">
+              <container_table>
+                <p><label>Логін:</label><input type="text" id="login" style=""></input></p>
+                <p><label>Ел.Пошта:</label><input type="text" id="mail" style=""></input></p>
+                <p><label>Пароль:</label><input type="password" id="pass" style=""></input></p>
+                <p><label>Повторити Пароль:</label><input type="password" id="pass2" style=""></input></p>
+                <p><label id="error_msg"></label></p>
+                <p><div class="btn btn-primary centered" style="text-align: middle;" onclick="check_login();"> Оновити </div></p>
+              </container_table>
+            </div>
           </div>
         </div>
       </div>

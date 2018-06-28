@@ -11,6 +11,7 @@
     <script src="js/room.js"></script>
     <script src="js/ticket.js"></script>
     <script src="js/igorko's_tabs.js"></script>
+    <script src="js/page_transfer.js"></script>
     <script src="js/ticket_list.js"></script>
   </head>
   <body onload="loadList(); updateList();">
@@ -53,6 +54,10 @@
             <div class="well">
               <h4>Створити нове замовлення</h4>
               <!--Insert ticket creation stuff here-->
+
+              <h5>Оберіть дату та час:</h5>
+              <input id="selected_datetime" type="datetime-local"></input>
+              <div class="btn btn-default" onclick="goToPage("room-list.php");">Далі</div>
             </div>
           </div>
           <div class="col-md-9">
