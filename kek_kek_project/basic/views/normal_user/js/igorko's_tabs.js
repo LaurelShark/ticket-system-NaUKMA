@@ -49,7 +49,7 @@ function updateList()
         {
             var el = document.createElement('div');
             var temp_button = document.createElement("button");
-            temp_button.className = "btn btn-default panel-heading main-color-bg";
+            temp_button.className = "btn btn-default panel-heading main-color-bg room_button";
             temp_button.setAttribute('onclick',  'openTab(event, '+i+');');
             temp_button.innerHTML = '<h3 class="panel-title"><i class="fa fa-arrows" aria-hidden="true"></i>'+valid_rooms[i].name+'</h3>';
 

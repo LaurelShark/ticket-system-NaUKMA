@@ -53,7 +53,7 @@
 
               <h5>Оберіть дату та час:</h5>
               <input id="selected_datetime" type="datetime-local"></input>
-              <div class="btn btn-default" onclick="goToPage("room-list.php");">Далі</div>
+              <div class="btn btn-default" onclick="goToPage('room-list.php');">Далі</div>
             </div>
           </div>
           <div class="col-md-9">

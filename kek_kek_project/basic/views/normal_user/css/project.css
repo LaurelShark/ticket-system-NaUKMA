@@ -30,6 +30,7 @@ container_table select {
 
 .room_button {
 	margin: 5px;
+	
 	-width: 95%;
 	-display: none;
 }
